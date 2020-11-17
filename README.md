@@ -3,7 +3,7 @@
 | ----------- | ------ | ----------- |
 | nickname    | string | null: false |
 | email       | string | null: false |
-| password    | string | null: false |
+| encrypted_password   | string | null: false |
 | last_name   | string | null: false |
 | first_name  | string | null: false |
 | last_kana   | string | null: false |
@@ -18,14 +18,13 @@
 ## items テーブル
 | Column              | Type       | Options     |
 | ------------------- | ---------- | ----------- |
-| image               | text       | null: false |
 | item_name           | string     | null: false |
 | explanation         | text       | null: false |
 | category            | integer    | null: false |
-| condition           | integer    | null: false |
-| shipping_charge     | integer    | null: false |
-| prefectures         | integer    | null: false |
-| purchase_to_day     | integer    | null: false |
+| condition_id        | integer    | null: false |
+| shipping_charge_id  | integer    | null: false |
+| prefectures_id      | integer    | null: false |
+| purchase_to_day_id  | integer    | null: false |
 | value               | integer    | null: false |
 | user_id             | integer    | null: false, foreign_key: true | 
 
@@ -46,7 +45,6 @@
 | ------------- | ------- | ------------------------------ |
 | item_id       | integer | null: false, foreign_key: true |
 | user_id       | integer | null: false, foreign_key: true |
-| purchase_date | date    | null: false, foreign_key: true |
 
 ### Association
 
@@ -65,8 +63,7 @@
 | address       | string     | null: false                    |
 | building_name | string     |                                |
 | phone_number  | string     | null: false                    |
-| purchase_id   | integer    | null: false, foreign_key: true |
-| purchase_info | integer    | null: false, foreign_key: true |
+| purchase_info_id| integer    | null: false, foreign_key: true |
 
 ### Association
 
