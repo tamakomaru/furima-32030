@@ -13,14 +13,14 @@
 ### Association
 
 - has_many :items
-- has_many :purchase_info
+- has_many :purchase_infos
 
 ## items テーブル
 | Column              | Type       | Options     |
 | ------------------- | ---------- | ----------- |
 | item_name           | string     | null: false |
 | explanation         | text       | null: false |
-| category            | integer    | null: false |
+| category_id         | integer    | null: false |
 | condition_id        | integer    | null: false |
 | shipping_charge_id  | integer    | null: false |
 | prefectures_id      | integer    | null: false |
