@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :condition
   belongs_to :shipping_charge
-  belongs_to :prefectures
+  belongs_to :prefecture
   belongs_to :purchase_to_day
 
   with_options presence: true do
@@ -18,6 +18,6 @@ class Item < ApplicationRecord
   validates :shipping_charge_id, numericality: { other_than: 1 }
   validates :prefectures_id, numericality: { other_than: 1 }
   validates :purchase_to_day_id, numericality: { other_than: 1 }
+  validates :value
   end
-
 end
