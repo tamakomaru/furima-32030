@@ -1,0 +1,2 @@
+class PurchaseToDay < ApplicationRecord
+end
