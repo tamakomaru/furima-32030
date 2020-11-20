@@ -85,6 +85,35 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Value is not a number")
     end
 
+    it "category_idがID1の[---]を選択すると登録出来ないこと" do
+      @item.category_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Category must be other than 1")
+    end
+
+    it "condition_idがID1の[---]を選択すると登録出来ないこと" do
+      @item.condition_id  = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Condition must be other than 1")
+    end
+
+    it "shipping_charge_idがID1の[---]を選択すると登録出来ないこと" do
+      @item.shipping_charge_id  = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Shipping charge must be other than 1")
+    end
+
+    it "shipping_charge_idがID1の[---]を選択すると登録出来ないこと" do
+      @item.prefectures_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Prefectures must be other than 1")
+    end
+
+    it "purchase_to_day_idがID1の[---]を選択すると登録出来ないこと" do
+      @item.purchase_to_day_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Purchase to day must be other than 1")
+    end
 
   end
 end 
