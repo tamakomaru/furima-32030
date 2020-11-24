@@ -49,10 +49,10 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Shipping charge can't be blank")
     end
 
-    it 'prefectures_idが空では登録できないこと' do
-      @item.prefectures_id = nil
+    it 'prefecture_idが空では登録できないこと' do
+      @item.prefecture_id = nil
       @item.valid?
-      expect(@item.errors.full_messages).to include("Prefectures can't be blank")
+      expect(@item.errors.full_messages).to include("Prefecture can't be blank")
     end
 
     it 'purchase_to_day_idが空では登録できないこと' do
@@ -104,9 +104,9 @@ RSpec.describe Item, type: :model do
     end
 
     it 'shipping_charge_idがID1の[---]を選択すると登録出来ないこと' do
-      @item.prefectures_id = 1
+      @item.prefecture_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include('Prefectures must be other than 1')
+      expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
     end
 
     it 'purchase_to_day_idがID1の[---]を選択すると登録出来ないこと' do
