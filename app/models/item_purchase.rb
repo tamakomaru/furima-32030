@@ -1,6 +1,6 @@
 class ItemPurchase
   include ActiveModel::Model
-    attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :address, :building, :phone_number
+    attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :address, :building, :phone_number, :token
 
     with_options presence: true do
       validates :postal_code, format: {with: /\A\d{3}[-]\d{4}\z/, message: "が間違っています (-)が必要です"}
@@ -10,6 +10,7 @@ class ItemPurchase
       validates :phone_number,format: {with: /\A\d{10}$|^\d{11}\z/, message: "が間違っています"}
       validates :user_id
       validates :item_id
+      validates :token
     end
     validates :prefecture_id, numericality: { other_than: 1 }
 
