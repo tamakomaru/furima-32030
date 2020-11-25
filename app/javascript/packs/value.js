@@ -21,4 +21,4 @@ function value(){
   });
 
  }
- window.addEventListener('turbolinks:load', value);
+ window.addEventListener("load", value);

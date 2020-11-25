@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   has_one_attached :image
-  has_one :purchase_info
+  has_one :purchase
   belongs_to :user
 
   with_options presence: true do
